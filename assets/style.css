@@ -1,0 +1,27 @@
+header {
+    background-image: linear-gradient(to right, rgb(90, 107, 234) , rgb(38, 34, 227));
+    text-align: center;
+    margin: 10px;
+    color: white;
+    font-size: 40px;
+}
+
+main {
+    display: flex;
+}
+
+#search-section {
+    width: 25%;
+    margin-right: 20px;
+}
+
+#city-search {
+    display: flex;
+    flex-direction: column;
+}
+
+#forecast {
+    width: 75%;
+}
+
+    

@@ -12,66 +12,79 @@
             <div>Weather Dashboard</div>
         </header>
 
-        <!-- Search for a City Section -->
-        <section>
-            <!-- Search for a City -->
-            <div>
-                <div>Search for a City</div>
-                <input type="text" placeholder="Atlanta">
-                <input type="submit" value="submit">
-            </div>
+        <main class="container-fluid">
+            <!-- Search for a City Section -->
+            <section id="search-section">
+                <!-- Search for a City -->
+                <div id="city-search">
+                    <div>Search for a City</div>
+                    <input type="text" placeholder="Atlanta">
+                    <input type="submit" value="submit">
+                </div>
 
-            <!-- Local Storage Display -->
-            <div>
-                <textarea id="searched-city-display">This is where local storage will display</textarea>
-            </div>
+                <!-- Local Storage Display -->
+                <div>
+                    <div>This is where local storage will display</div>
+                </div>
 
-        </section>
+            </section>
 
-        <!-- Next to Search for a City, Holds Current and 5-Day Forecast -->
-        <section>
-            <!-- Current Forecast -->
-            <div>
-                <div class="card">
-                    <div class="card-body">
-                      Current Forecast
+            <!-- Next to Search for a City, Holds Current and 5-Day Forecast -->
+            <section id="forecast">
+                <!-- Current Forecast -->
+                <div id="current-container" class="m-2">
+                    <div>
+                        <div class="card col-12">
+                            <div class="card-body">
+                            Current Forecast
+                            </div>
+                        </div>
                     </div>
-                  </div>
-            </div>
+                </div>
 
-            <!-- 5-day Forecast -->
-            <div>
-                <div class="card">
-                    <div class="card-body">
-                      Weather Forecast Day 2
-                    </div>
-                  </div>
-                  <div class="card">
-                    <div class="card-body">
-                      Weather Forecast Day 3
-                    </div>
-                  </div>
-                  <div class="card">
-                    <div class="card-body">
-                      Weather Forecast Day 4
-                    </div>
-                  </div>
-                  <div class="card">
-                    <div class="card-body">
-                      Weather Forecast Day 5
-                    </div>
-                  </div>
-                  <div class="card">
-                    <div class="card-body">
-                      Weather Forecast Day 6
-                    </div>
-                  </div>
+                <!-- 5-day Forecast -->
+                <div id="five-day-container" class="column">
+                    <div>
+                        <div class="card m-2 row justify-content-around" style="width: 18rem;">
+                            <div class="card-body">
+                              <h5 class="card-title">Card title</h5>
+                              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                            </div>
+                          </div>
 
-            </div>
+                          <div class="card m-2 row justify-content-around" style="width: 18rem">
+                            <div class="card-body">
+                              <h5 class="card-title">Card title</h5>
+                              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                            </div>
+                          </div>
 
-        </section>
+                          <div class="card m-2 row justify-content-around" style="width: 18rem">
+                            <div class="card-body">
+                              <h5 class="card-title">Card title</h5>
+                              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                            </div>
+                          </div>
 
-    
+                          <div class="card m-2 row justify-content-around" style="width: 18rem">
+                            <div class="card-body">
+                              <h5 class="card-title">Card title</h5>
+                              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+
+                            </div>
+                          </div>
+                          <div class="card m-2 row justify-content-around" style="width: 18rem">
+                            <div class="card-body">
+                              <h5 class="card-title">Card title</h5>
+                              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+
+                            </div>
+                          </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+
         <script src="./script.js"></script>
     </body>
 
