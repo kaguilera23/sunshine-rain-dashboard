@@ -23,8 +23,6 @@ main {
 
 #forecast {
     width: 80%;    
-    border: rgb(90, 107, 234) solid 2px;
-    border-radius: 5px;
 }
 
 #current-container {

@@ -26,7 +26,6 @@ var dayFiveDate = document.getElementById("day-five")
 localStorageSection = document.getElementById("local-storage")
 localStorageSections = $("#local-storage")
 
-
 todayEl.textContent = today.format("dddd, M/D/YYYY")
 dayOneDate.textContent = (today.add(1, 'day')).format("ddd, M/D")
 dayTwoDate.textContent = (today.add(2, 'day')).format("ddd, M/D")
@@ -34,17 +33,22 @@ dayThreeDate.textContent = (today.add(3, 'day')).format("ddd, M/D")
 dayFourDate.textContent = (today.add(4, 'day')).format("ddd, M/D")
 dayFiveDate.textContent = (today.add(5, 'day')).format("ddd, M/D")
 
-// Set default city to Atlanta and display on load
+// // Set default city to Atlanta and display on load
 getCurrentWeather(33.7489924, -84.3902644)
 getFiveDayForecast(33.7489924, -84.3902644)
 
 // render local storage on load
 var previouslySearched = JSON.parse(localStorage.getItem("city"))
-for (var i = 0; i < previouslySearched.length; i++) {
-    var newSearch = document.createElement("p")
-    newSearch.textContent = previouslySearched[i]
-    newSearch.classList.add("previously-searched")
-    localStorageSection.appendChild(newSearch)
+if (!previouslySearched) {
+    localStorageSection.textContent = "Your Previous Searches Will Go Here!"
+} else {
+    for (var i = 0; i < previouslySearched.length; i++) {
+        
+        var newSearch = document.createElement("p")
+        newSearch.textContent = previouslySearched[i]
+        newSearch.classList.add("previously-searched")
+        localStorageSection.appendChild(newSearch)
+    }
 }
 
 // previously searched event listenter
@@ -79,8 +83,6 @@ searchSection.addEventListener("submit", function (event) {
     var previousCities = JSON.parse(localStorage.getItem("city"))
     previousCities.push(newCity)
     localStorage.setItem("city", JSON.stringify(previousCities))
-
-
 })
 
 // Get latitude and longitude coordinates for weather api call
@@ -94,7 +96,6 @@ fetch(geocoderUrl)
 }
 )
 .then(function (data) {
-    console.log(data)
     var cityLatitude = data[0].lat;
     var cityLongitude = data[0].lon
     getCurrentWeather(cityLatitude, cityLongitude)
@@ -119,7 +120,9 @@ fetch(currentWeatherUrl)
     windSpeedEl.textContent = data.wind.speed + " MPH"
     currentCondition.textContent = data.weather[0].description
 
-    console.log(data.weather[0].icon)
+    var icon = document.createElement("img")
+    icon.setAttribute("src", "./assets/icons/" + data.weather[0].icon + ".png")
+    searchedCityEl.appendChild(icon)
 })
 }
 
@@ -140,10 +143,15 @@ function getFiveDayForecast (lat, lon) {
             var fetchDates = timestampsArray[i].dt_txt
 
             if (fetchDates === dayOne) {
+                
                 var dayOneIcon = document.getElementById("oneIcon")
                 var dayOneTemp = document.getElementById("oneTemp")
                 var dayOneHumidity = document.getElementById("oneHumidity")
                 var dayOneWind = document.getElementById("oneWind")
+
+                var iconOne = document.createElement("img")
+                iconOne.setAttribute("src", "./assets/icons/" + timestampsArray[i].weather[0].icon + ".png")
+                dayOneIcon.appendChild(iconOne)
 
                 dayOneTemp.textContent = timestampsArray[i].main.temp + " \xB0F"
                 dayOneHumidity.textContent = timestampsArray[i].main.humidity + " %"
@@ -154,6 +162,10 @@ function getFiveDayForecast (lat, lon) {
                 var dayTwoHumidity = document.getElementById("twoHumidity")
                 var dayTwoWind = document.getElementById("twoWind")
 
+                var iconTwo = document.createElement("img")
+                iconTwo.setAttribute("src", "./assets/icons/" + timestampsArray[i].weather[0].icon + ".png")
+                dayTwoIcon.appendChild(iconTwo)
+
                 dayTwoTemp.textContent = timestampsArray[i].main.temp + " \xB0F"
                 dayTwoHumidity.textContent = timestampsArray[i].main.humidity + " %"
                 dayTwoWind.textContent = timestampsArray[i].wind.speed + " MPH"
@@ -162,6 +174,10 @@ function getFiveDayForecast (lat, lon) {
                 var dayThreeTemp = document.getElementById("threeTemp")
                 var dayThreeHumidity = document.getElementById("threeHumidity")
                 var dayThreeWind = document.getElementById("threeWind")
+
+                var iconThree = document.createElement("img")
+                iconThree.setAttribute("src", "./assets/icons/" + timestampsArray[i].weather[0].icon + ".png")
+                dayThreeIcon.appendChild(iconThree)
 
                 dayThreeTemp.textContent = timestampsArray[i].main.temp + " \xB0F"
                 dayThreeHumidity.textContent = timestampsArray[i].main.humidity + " %"
@@ -172,6 +188,10 @@ function getFiveDayForecast (lat, lon) {
                 var dayFourHumidity = document.getElementById("fourHumidity")
                 var dayFourWind = document.getElementById("fourWind")
 
+                var iconFour = document.createElement("img")
+                iconFour.setAttribute("src", "./assets/icons/" + timestampsArray[i].weather[0].icon + ".png")
+                dayFourIcon.appendChild(iconFour)
+
                 dayFourTemp.textContent = timestampsArray[i].main.temp + " \xB0F"
                 dayFourHumidity.textContent = timestampsArray[i].main.humidity + " %"
                 dayFourWind.textContent = timestampsArray[i].wind.speed + " MPH"
@@ -181,11 +201,14 @@ function getFiveDayForecast (lat, lon) {
                 var dayFiveHumidity = document.getElementById("fiveHumidity")
                 var dayFiveWind = document.getElementById("fiveWind")
 
+                var iconFive = document.createElement("img")
+                iconFive.setAttribute("src", "./assets/icons/" + timestampsArray[i].weather[0].icon + ".png")
+                dayFiveIcon.appendChild(iconFive)
+
                 dayFiveTemp.textContent = timestampsArray[i].main.temp + " \xB0F"
                 dayFiveHumidity.textContent = timestampsArray[i].main.humidity + " %"
                 dayFiveWind.textContent = timestampsArray[i].wind.speed + " MPH"
             }
         }
-
     })
     }
