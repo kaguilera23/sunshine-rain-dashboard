@@ -17,7 +17,7 @@ The homepage shows you a default city of Atlanta and its current weather and fut
 
 If you would like to explore other cities, you may search for this with the search bar and hit enter or the submit button
 
-![search](./assets/images/Screenshot%20(5).png)
+![search](./assets/images/Screenshot%20(7).png)
 
 If you have previously searched any cities, they will show up below the search bar. You may click on the previously searched cities as well instead of typing the city name again.
 
