@@ -22,6 +22,11 @@ var dayThreeDate = document.getElementById("day-three")
 var dayFourDate = document.getElementById("day-four")
 var dayFiveDate = document.getElementById("day-five")
 
+// I'm used to vanilla JS but needed jquery for second paramater in event listener
+localStorageSection = document.getElementById("local-storage")
+localStorageSections = $("#local-storage")
+
+
 todayEl.textContent = today.format("dddd, M/D/YYYY")
 dayOneDate.textContent = (today.add(1, 'day')).format("ddd, M/D")
 dayTwoDate.textContent = (today.add(2, 'day')).format("ddd, M/D")
@@ -33,6 +38,27 @@ dayFiveDate.textContent = (today.add(5, 'day')).format("ddd, M/D")
 getCurrentWeather(33.7489924, -84.3902644)
 getFiveDayForecast(33.7489924, -84.3902644)
 
+// render local storage on load
+var previouslySearched = JSON.parse(localStorage.getItem("city"))
+for (var i = 0; i < previouslySearched.length; i++) {
+    var newSearch = document.createElement("p")
+    newSearch.textContent = previouslySearched[i]
+    newSearch.classList.add("previously-searched")
+    localStorageSection.appendChild(newSearch)
+}
+
+// previously searched event listenter
+localStorageSections.on("click", ".previously-searched", function(event) {
+    submittedSection.textContent = "Working on Your Forecast!"
+
+    setTimeout(() => {
+        submittedSection.textContent = ""
+    }, 3000);
+
+    var research = event.target.textContent
+    getLatLon(research)
+})
+
 // Search a new city on submit/enter
 searchSection.addEventListener("submit", function (event) {
     event.preventDefault();
@@ -40,11 +66,21 @@ searchSection.addEventListener("submit", function (event) {
 
     setTimeout(() => {
         submittedSection.textContent = ""
-    }, 4000);
+    }, 3000);
 
     var cityInput = (searchBox.value.split(" ").join("-"))
-    console.log(cityInput)
     getLatLon(cityInput)
+
+    var newCity = searchBox.value
+    if (localStorage.getItem("city") == null) {
+        localStorage.setItem("city", "[]")
+    }
+
+    var previousCities = JSON.parse(localStorage.getItem("city"))
+    previousCities.push(newCity)
+    localStorage.setItem("city", JSON.stringify(previousCities))
+
+
 })
 
 // Get latitude and longitude coordinates for weather api call
