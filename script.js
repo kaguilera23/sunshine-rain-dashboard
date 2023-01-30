@@ -10,14 +10,30 @@ var humidityEl = document.getElementById("humidity")
 var windSpeedEl = document.getElementById("wind-speed")
 var currentCondition = document.getElementById("condition")
 var submittedSection = document.getElementById("submitted")
+// future forecasts will load that date's weather at noon
 var dayOne = (today.add(1, 'day')).format("YYYY-MM-DD 12:00:00")
 var dayTwo = (today.add(2, 'day')).format("YYYY-MM-DD 12:00:00")
 var dayThree = (today.add(3, 'day')).format("YYYY-MM-DD 12:00:00")
 var dayFour = (today.add(4, 'day')).format("YYYY-MM-DD 12:00:00")
 var dayFive = (today.add(5, 'day')).format("YYYY-MM-DD 12:00:00")
+var dayOneDate = document.getElementById("day-one")
+var dayTwoDate = document.getElementById("day-two")
+var dayThreeDate = document.getElementById("day-three")
+var dayFourDate = document.getElementById("day-four")
+var dayFiveDate = document.getElementById("day-five")
 
 todayEl.textContent = today.format("dddd, M/D/YYYY")
+dayOneDate.textContent = (today.add(1, 'day')).format("ddd, M/D")
+dayTwoDate.textContent = (today.add(2, 'day')).format("ddd, M/D")
+dayThreeDate.textContent = (today.add(3, 'day')).format("ddd, M/D")
+dayFourDate.textContent = (today.add(4, 'day')).format("ddd, M/D")
+dayFiveDate.textContent = (today.add(5, 'day')).format("ddd, M/D")
 
+// Set default city to Atlanta and display on load
+getCurrentWeather(33.7489924, -84.3902644)
+getFiveDayForecast(33.7489924, -84.3902644)
+
+// Search a new city on submit/enter
 searchSection.addEventListener("submit", function (event) {
     event.preventDefault();
     submittedSection.textContent = "Working on Your Forecast!"
@@ -31,6 +47,7 @@ searchSection.addEventListener("submit", function (event) {
     getLatLon(cityInput)
 })
 
+// Get latitude and longitude coordinates for weather api call
 function getLatLon (city) {
     
 var geocoderUrl = "http://api.openweathermap.org/geo/1.0/direct?q="+ city + "&&appid=" + apiKey
@@ -50,10 +67,10 @@ fetch(geocoderUrl)
 });
 }
 
+// api call for current weather data
 function getCurrentWeather(lat, lon) {
 
 var currentWeatherUrl = "https://api.openweathermap.org/data/2.5/weather?lat=" + lat + "&lon=" + lon + "&appid=" + apiKey + "&units=imperial"
-
 fetch(currentWeatherUrl)
 .then(function(res) {
     return res.json();
@@ -70,6 +87,7 @@ fetch(currentWeatherUrl)
 })
 }
 
+// api call for future weather data
 function getFiveDayForecast (lat, lon) {
 
     var fiveDayUrl = "https://api.openweathermap.org/data/2.5/forecast?lat=" + lat +"&lon=" + lon + "&appid=" + apiKey + "&units=imperial"
@@ -84,7 +102,6 @@ function getFiveDayForecast (lat, lon) {
         for (var i = 0; i < timestampsArray.length; i++) {
 
             var fetchDates = timestampsArray[i].dt_txt
-            console.log(timestampsArray[i].dt_txt)
 
             if (fetchDates === dayOne) {
                 var dayOneIcon = document.getElementById("oneIcon")
