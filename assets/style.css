@@ -24,4 +24,8 @@ main {
     width: 75%;
 }
 
+#current-container {
+    border: red solid 2px;
+    height: 20%;
+}
     
