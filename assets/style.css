@@ -11,7 +11,7 @@ main {
 }
 
 #search-section {
-    width: 25%;
+    width: 20%;
     margin-right: 20px;
 }
 
@@ -21,11 +21,21 @@ main {
 }
 
 #forecast {
-    width: 75%;
+    width: 80%;
 }
 
 #current-container {
     border: red solid 2px;
-    height: 20%;
+    height: fit-content;
+}
+
+#fiveDay-container {
+    border: blue solid 2px;
+    height: 50%;
+}
+
+#date-container {
+    border: yellow solid 2px;
+    height: 10%;
 }
     

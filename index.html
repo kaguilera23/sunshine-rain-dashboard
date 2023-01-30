@@ -31,85 +31,65 @@
 
             <!-- Next to Search for a City, Holds Current and 5-Day Forecast -->
             <section id="forecast">
-                <!-- Current Forecast -->
-                <div class = "m-2">
-                    <div">
+                <!-- Date Section -->
+                <div class="m-2" id="date-container">
+                    <div class="m-2">
                     Today's Date: <span id="today-date"></span>
                     </div>
                 </div>
 
+                <!-- Current Weather Section -->
                 <div id="current-container" class="m-2">
-                    <div class = "m-2">
-                        <div>
-                        <strong>Current Forecast for <span id="searched-city"></span></strong>
-                        </div>
-                    </div>
-
-                    <div class = "m-2">
-                        <div>
-                        Condition: <span id="condition"></span>
-                        </div>
-                    </div>
-
-                    <div class = "m-2">
-                        <div>
-                        Temperature: <span id="temperature"></span>
-                        </div>
-                    </div>
-
-                    <div class = "m-2">
-                        <div>
-                        Humidity: <span id="humidity"></span>
-                        </div>
-                    </div>
-
-                    <div class = "m-2">
-                        <div>
-                        Wind Speed: <span id="wind-speed"></span>
-                        </div>
-                    </div>
-
-                   
+                    <div class="m-2">
+                        <p><strong>Current Forecast for <span id="searched-city"></span></strong></p>
+                        <p>Condition: <span id="condition"></span></p>
+                        <p>Temperature: <span id="temperature"></span></p>
+                        <p>Humidity: <span id="humidity"></span></p>
+                        <p> Wind Speed: <span id="wind-speed"></span></p>
+                    </div>                
                 </div>
 
-                <!-- 5-day Forecast -->
-                <div id="five-day-container" class="column">
-                    <div>
-                        <div class="card m-2 row justify-content-around" style="width: 18rem;">
-                            <div class="card-body">
-                              <h5 class="card-title">Card title</h5>
-                              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                            </div>
+                <!-- 5-day Forecast Section -->
+                <div class="row m-2" id="fiveDay-container">
+                    <div class="col-sm-2 m-2">
+                      <div class="card">
+                        <div>
+                          <h5 class="card-title">Special title treatment</h5>
+                          <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-sm-2 m-2">
+                      <div class="card">
+                        <div>
+                          <h5 class="card-title">Special title treatment</h5>
+                          <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-sm-2 m-2">
+                        <div class="card">
+                          <div>
+                            <h5 class="card-title">Special title treatment</h5>
+                            <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
                           </div>
-
-                          <div class="card m-2 row justify-content-around" style="width: 18rem">
-                            <div class="card-body">
-                              <h5 class="card-title">Card title</h5>
-                              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-2 m-2">
+                        <div class="card">
+                          <div>
+                            <h5 class="card-title">Special title treatment</h5>
+                            <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
                           </div>
-
-                          <div class="card m-2 row justify-content-around" style="width: 18rem">
-                            <div class="card-body">
-                              <h5 class="card-title">Card title</h5>
-                              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-2 m-2">
+                        <div class="card">
+                          <div>
+                            <h5 class="card-title">Special title treatment</h5>
+                            <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
                           </div>
-
-                          <div class="card m-2 row justify-content-around" style="width: 18rem">
-                            <div class="card-body">
-                              <h5 class="card-title">Card title</h5>
-                              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-
-                            </div>
-                          </div>
-                          <div class="card m-2 row justify-content-around" style="width: 18rem">
-                            <div class="card-body">
-                              <h5 class="card-title">Card title</h5>
-                              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-
-                            </div>
-                          </div>
+                        </div>
                     </div>
                 </div>
             </section>
