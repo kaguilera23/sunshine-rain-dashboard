@@ -13,18 +13,18 @@ N/A
 
 The homepage shows you a default city of Atlanta and its current weather and future 5-day forecast with icons. Weather conditions included are temperature, humidity, and wind speed. 
 
-![homepage](./assets/images/1.PNG)
+![homepage](./assets/images/Screenshot%20(2).png)
 
 If you would like to explore other cities, you may search for this with the search bar and hit enter or the submit button
 
-![search](./assets/images/2.PNG)
+![search](./assets/images/Screenshot%20(5).png)
 
 If you have previously searched any cities, they will show up below the search bar. You may click on the previously searched cities as well instead of typing the city name again.
 
-![storage](./assets/images/3.PNG)
+![storage](./assets/images/Screenshot%20(3).png)
 
 ## Bugs
 
 Currently, the icons in the 5-day weather forecast add together instead of replacing the previous one. The last icon in the series is the icon representation of the most recently searched city.
 
-![bug](./assets/images/4.PNG)
+![bug](./assets/images/Screenshot%20(4).png)
