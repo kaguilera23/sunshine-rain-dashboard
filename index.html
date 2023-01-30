@@ -34,7 +34,7 @@
             <section id="forecast">
                 <!-- Date Section -->
                 <div class="m-2" id="date-container">
-                    <div class="m-2">
+                    <div class="m-2 text-center">
                     <strong>Today's Date: <span id="today-date"></span></strong>
                     </div>
                 </div>
@@ -42,7 +42,7 @@
                 <!-- Current Weather Section -->
                 <div id="current-container" class="m-2">
                     <div class="m-2">
-                        <h4>Current Forecast for <span id="searched-city"></span></h4>
+                        <h4 class="text-center">Current Forecast for <span id="searched-city"></span></h4>
                         <p>Condition: <span id="condition"></span></p>
                         <p>Temperature: <span id="temperature"></span></p>
                         <p>Humidity: <span id="humidity"></span></p>
@@ -50,60 +50,62 @@
                     </div>                
                 </div>
 
+                <h4 class="m-2 text-center">Future 5-Day Forecast</h4>
                 <!-- 5-day Forecast Section -->
                 <div class="row m-2 justify-content-around" id="fiveDay-container">
-                    <div class="col-sm-2 m-2">
+                  
+                    <div class="col-sm-2.5 m-2">
                       <div class="card">
                         <div>
-                          <h5 class="card-title m-2">1/30/2023</h5>
-                          <p class="card-text m-2">Icon: </p>
-                          <p class="card-text m-2">Temp: </p>
-                          <p class="card-text m-2">Humidity: </p>
-                          <p class="card-text m-2">Wind: </p>
+                          <h5 class="card-title m-2" id = "day-one">1/30/2023</h5>
+                          <p class="card-text m-2">Icon: <span id = "oneIcon"></span></p>
+                          <p class="card-text m-2">Temp: <span id = "oneTemp"></span></p>
+                          <p class="card-text m-2">Humidity: <span id = "oneHumidity"></span></p>
+                          <p class="card-text m-2">Wind: <span id = "oneWind"></span></p>
                         </div>
                       </div>
                     </div>
-                    <div class="col-sm-2 m-2">
+                    <div class="col-sm-2.5 m-2">
                       <div class="card">
                         <div>
-                          <h5 class="card-title m-2">1/30/2023</h5>
-                          <p class="card-text m-2">Icon: </p>
-                          <p class="card-text m-2">Temp: </p>
-                          <p class="card-text m-2">Humidity: </p>
-                          <p class="card-text m-2">Wind: </p>
+                          <h5 class="card-title m-2" id = "day-two">1/30/2023</h5>
+                          <p class="card-text m-2">Icon: <span id = "twoIcon"></span></p>
+                          <p class="card-text m-2">Temp: <span id = "twoTemp"></span></p>
+                          <p class="card-text m-2">Humidity: <span id = "twoHumidity"></span></p>
+                          <p class="card-text m-2">Wind: <span id = "twoWind"></span></p>
                         </div>
                       </div>
                     </div>
-                    <div class="col-sm-2 m-2">
+                    <div class="col-sm-2.5 m-2">
                         <div class="card">
                           <div>
-                            <h5 class="card-title m-2">1/30/2023</h5>
-                            <p class="card-text m-2">Icon: </p>
-                            <p class="card-text m-2">Temp: </p>
-                            <p class="card-text m-2">Humidity: </p>
-                            <p class="card-text m-2">Wind: </p>
+                            <h5 class="card-title m-2" id = "day-three">1/30/2023</h5>
+                            <p class="card-text m-2">Icon: <span id = "threeIcon"></span></p>
+                            <p class="card-text m-2">Temp: <span id = "threeTemp"></span></p>
+                            <p class="card-text m-2">Humidity: <span id = "threeHumidity"></span></p>
+                            <p class="card-text m-2">Wind: <span id = "threeWind"></span></p>
                           </div>
                         </div>
                     </div>
-                    <div class="col-sm-2 m-2">
+                    <div class="col-sm-2.5 m-2">
                         <div class="card">
                           <div>
-                            <h5 class="card-title m-2">1/30/2023</h5>
-                            <p class="card-text m-2">Icon: </p>
-                            <p class="card-text m-2">Temp: </p>
-                            <p class="card-text m-2">Humidity: </p>
-                            <p class="card-text m-2">Wind: </p>
+                            <h5 class="card-title m-2" id = "day-four">1/30/2023</h5>
+                            <p class="card-text m-2">Icon: <span id = "fourIcon"></span></p>
+                            <p class="card-text m-2">Temp: <span id = "fourTemp"></span></p>
+                            <p class="card-text m-2">Humidity: <span id = "fourHumidity"></span></p>
+                            <p class="card-text m-2">Wind: <span id = "fourWind"></span></p>
                           </div>
                         </div>
                     </div>
-                    <div class="col-sm-2 m-2">
+                    <div class="col-sm-2.5 m-2">
                         <div class="card">
                           <div>
-                            <h5 class="card-title m-2">1/30/2023</h5>
-                            <p class="card-text m-2">Icon: </p>
-                            <p class="card-text m-2">Temp: </p>
-                            <p class="card-text m-2">Humidity: </p>
-                            <p class="card-text m-2">Wind: </p>
+                            <h5 class="card-title m-2" id = "day-five">1/30/2023</h5>
+                            <p class="card-text m-2">Icon: <span id = "fiveIcon"></span></p>
+                            <p class="card-text m-2">Temp: <span id = "fiveTemp"></span></p>
+                            <p class="card-text m-2">Humidity: <span id = "fiveHumidity"></span></p>
+                            <p class="card-text m-2">Wind: <span id = "fiveWind"></span></p>
                           </div>
                         </div>
                     </div>

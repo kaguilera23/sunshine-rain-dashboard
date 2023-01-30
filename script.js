@@ -26,7 +26,8 @@ searchSection.addEventListener("submit", function (event) {
         submittedSection.textContent = ""
     }, 4000);
 
-    var cityInput = (searchBox.value.split(" ").join(""))
+    var cityInput = (searchBox.value.split(" ").join("-"))
+    console.log(cityInput)
     getLatLon(cityInput)
 })
 
@@ -40,6 +41,7 @@ fetch(geocoderUrl)
 }
 )
 .then(function (data) {
+    console.log(data)
     var cityLatitude = data[0].lat;
     var cityLongitude = data[0].lon
     getCurrentWeather(cityLatitude, cityLongitude)
@@ -77,6 +79,60 @@ function getFiveDayForecast (lat, lon) {
         return res.json()
     })
     .then(function(data) {
-        console.log(data)
+        var timestampsArray = data.list
+
+        for (var i = 0; i < timestampsArray.length; i++) {
+
+            var fetchDates = timestampsArray[i].dt_txt
+            console.log(timestampsArray[i].dt_txt)
+
+            if (fetchDates === dayOne) {
+                var dayOneIcon = document.getElementById("oneIcon")
+                var dayOneTemp = document.getElementById("oneTemp")
+                var dayOneHumidity = document.getElementById("oneHumidity")
+                var dayOneWind = document.getElementById("oneWind")
+
+                dayOneTemp.textContent = timestampsArray[i].main.temp + " \xB0F"
+                dayOneHumidity.textContent = timestampsArray[i].main.humidity + " %"
+                dayOneWind.textContent = timestampsArray[i].wind.speed + " MPH"           
+            } else if (fetchDates === dayTwo) {
+                var dayTwoIcon = document.getElementById("twoIcon")
+                var dayTwoTemp = document.getElementById("twoTemp")
+                var dayTwoHumidity = document.getElementById("twoHumidity")
+                var dayTwoWind = document.getElementById("twoWind")
+
+                dayTwoTemp.textContent = timestampsArray[i].main.temp + " \xB0F"
+                dayTwoHumidity.textContent = timestampsArray[i].main.humidity + " %"
+                dayTwoWind.textContent = timestampsArray[i].wind.speed + " MPH"
+            } else if (fetchDates === dayThree) {
+                var dayThreeIcon = document.getElementById("threeIcon")
+                var dayThreeTemp = document.getElementById("threeTemp")
+                var dayThreeHumidity = document.getElementById("threeHumidity")
+                var dayThreeWind = document.getElementById("threeWind")
+
+                dayThreeTemp.textContent = timestampsArray[i].main.temp + " \xB0F"
+                dayThreeHumidity.textContent = timestampsArray[i].main.humidity + " %"
+                dayThreeWind.textContent = timestampsArray[i].wind.speed + " MPH" 
+            } else if (fetchDates === dayFour) {
+                var dayFourIcon = document.getElementById("fourIcon")
+                var dayFourTemp = document.getElementById("fourTemp")
+                var dayFourHumidity = document.getElementById("fourHumidity")
+                var dayFourWind = document.getElementById("fourWind")
+
+                dayFourTemp.textContent = timestampsArray[i].main.temp + " \xB0F"
+                dayFourHumidity.textContent = timestampsArray[i].main.humidity + " %"
+                dayFourWind.textContent = timestampsArray[i].wind.speed + " MPH"
+            } else if (fetchDates === dayFive) {
+                var dayFiveIcon = document.getElementById("fiveIcon")
+                var dayFiveTemp = document.getElementById("fiveTemp")
+                var dayFiveHumidity = document.getElementById("fiveHumidity")
+                var dayFiveWind = document.getElementById("fiveWind")
+
+                dayFiveTemp.textContent = timestampsArray[i].main.temp + " \xB0F"
+                dayFiveHumidity.textContent = timestampsArray[i].main.humidity + " %"
+                dayFiveWind.textContent = timestampsArray[i].wind.speed + " MPH"
+            }
+        }
+
     })
     }

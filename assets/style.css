@@ -31,7 +31,7 @@ main {
 
 #fiveDay-container {
     border: blue solid 2px;
-    height: 50%;
+    height: fit-content;
 }
 
 #date-container {
@@ -42,6 +42,7 @@ main {
 .card {
     border: purple solid 1px;
     height: fit-content;
+    width: fit-content;
 }
 
 #local-storage {
