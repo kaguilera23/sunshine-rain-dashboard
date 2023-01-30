@@ -39,3 +39,21 @@ main {
     height: 10%;
 }
     
+.card {
+    border: purple solid 1px;
+    height: fit-content;
+}
+
+#local-storage {
+    border: orange solid 2px;
+    height: 80%;
+}
+
+#city-search {
+    border: green solid 2px;
+    height: 20%;
+}
+
+#search-box {
+    width: 100%;
+}

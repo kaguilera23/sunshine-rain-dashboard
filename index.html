@@ -15,15 +15,16 @@
 
         <main class="container-fluid">
             <!-- Search for a City Section -->
-            <section id="search-section">
+            <section id="search-section" class = "m-2">
                 <!-- Search for a City -->
                 <form id="city-search">
-                    Search for a City <input type="text" placeholder="Atlanta" id="search-box">
-                    <input type="submit" value="submit">
+                    <strong class="text-center">Search for a City <input type="text" placeholder="Atlanta" id="search-box"></strong>
+                    <input type="submit" value="submit" class = "mt-2">
                 </form>
+                <p id="submitted" class="m-2"></p>
             
                 <!-- Local Storage Display -->
-                <div>
+                <div id="local-storage">
                     <div>This is where local storage will display</div>
                 </div>
 
@@ -34,14 +35,14 @@
                 <!-- Date Section -->
                 <div class="m-2" id="date-container">
                     <div class="m-2">
-                    Today's Date: <span id="today-date"></span>
+                    <strong>Today's Date: <span id="today-date"></span></strong>
                     </div>
                 </div>
 
                 <!-- Current Weather Section -->
                 <div id="current-container" class="m-2">
                     <div class="m-2">
-                        <p><strong>Current Forecast for <span id="searched-city"></span></strong></p>
+                        <h4>Current Forecast for <span id="searched-city"></span></h4>
                         <p>Condition: <span id="condition"></span></p>
                         <p>Temperature: <span id="temperature"></span></p>
                         <p>Humidity: <span id="humidity"></span></p>
@@ -50,44 +51,59 @@
                 </div>
 
                 <!-- 5-day Forecast Section -->
-                <div class="row m-2" id="fiveDay-container">
+                <div class="row m-2 justify-content-around" id="fiveDay-container">
                     <div class="col-sm-2 m-2">
                       <div class="card">
                         <div>
-                          <h5 class="card-title">Special title treatment</h5>
-                          <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                          <h5 class="card-title m-2">1/30/2023</h5>
+                          <p class="card-text m-2">Icon: </p>
+                          <p class="card-text m-2">Temp: </p>
+                          <p class="card-text m-2">Humidity: </p>
+                          <p class="card-text m-2">Wind: </p>
                         </div>
                       </div>
                     </div>
                     <div class="col-sm-2 m-2">
                       <div class="card">
                         <div>
-                          <h5 class="card-title">Special title treatment</h5>
-                          <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                          <h5 class="card-title m-2">1/30/2023</h5>
+                          <p class="card-text m-2">Icon: </p>
+                          <p class="card-text m-2">Temp: </p>
+                          <p class="card-text m-2">Humidity: </p>
+                          <p class="card-text m-2">Wind: </p>
                         </div>
                       </div>
                     </div>
                     <div class="col-sm-2 m-2">
                         <div class="card">
                           <div>
-                            <h5 class="card-title">Special title treatment</h5>
-                            <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                            <h5 class="card-title m-2">1/30/2023</h5>
+                            <p class="card-text m-2">Icon: </p>
+                            <p class="card-text m-2">Temp: </p>
+                            <p class="card-text m-2">Humidity: </p>
+                            <p class="card-text m-2">Wind: </p>
                           </div>
                         </div>
                     </div>
                     <div class="col-sm-2 m-2">
                         <div class="card">
                           <div>
-                            <h5 class="card-title">Special title treatment</h5>
-                            <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                            <h5 class="card-title m-2">1/30/2023</h5>
+                            <p class="card-text m-2">Icon: </p>
+                            <p class="card-text m-2">Temp: </p>
+                            <p class="card-text m-2">Humidity: </p>
+                            <p class="card-text m-2">Wind: </p>
                           </div>
                         </div>
                     </div>
                     <div class="col-sm-2 m-2">
                         <div class="card">
                           <div>
-                            <h5 class="card-title">Special title treatment</h5>
-                            <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                            <h5 class="card-title m-2">1/30/2023</h5>
+                            <p class="card-text m-2">Icon: </p>
+                            <p class="card-text m-2">Temp: </p>
+                            <p class="card-text m-2">Humidity: </p>
+                            <p class="card-text m-2">Wind: </p>
                           </div>
                         </div>
                     </div>
