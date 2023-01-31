@@ -88,7 +88,7 @@ searchSection.addEventListener("submit", function (event) {
 // Get latitude and longitude coordinates for weather api call
 function getLatLon (city) {
     
-var geocoderUrl = "http://api.openweathermap.org/geo/1.0/direct?q="+ city + "&&appid=" + apiKey
+var geocoderUrl = "https://api.openweathermap.org/geo/1.0/direct?q="+ city + "&&appid=" + apiKey
     
 fetch(geocoderUrl)
 .then(function(res) {
